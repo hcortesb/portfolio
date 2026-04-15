@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — HC</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────── -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">HC</a>
+        <div class="nav-center">
+          <a href="#work"    class="nav-link" data-key="nav.work">Work</a>
+          <a href="#contact" class="nav-link" data-key="nav.contact">Contact</a>
+        </div>
+        <button class="lang-btn" id="langToggle" aria-label="Toggle language">ES</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Hero ────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-body">
+        <p  class="hero-eyebrow" data-key="hero.eyebrow">Creative Portfolio</p>
+        <h1 class="hero-heading" data-key="hero.heading">Design &amp;<br>Development</h1>
+        <p  class="hero-sub"     data-key="hero.sub">Minimal. Intentional. Purposeful.</p>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label" data-key="hero.scroll">Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gallery ─────────────────────────────────────────────── -->
+  <section class="section-work" id="work">
+    <div class="container">
+
+      <div class="s-header">
+        <span class="s-index">01</span>
+        <h2 class="s-title" data-key="work.title">Selected Work</h2>
+      </div>
+
+      <div class="gallery" id="gallery" role="list">
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="0">
+          <img src="images/camilo_anchico_00.jpeg" alt="Project 1 — image 1" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="1">
+          <img src="images/camilo_anchico_01.jpeg" alt="Project 1 — image 2" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="2">
+          <img src="images/camilo_anchico_02.jpeg" alt="Project 2 — image 1" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="3">
+          <img src="images/camilo_anchico_03.jpeg" alt="Project 2 — image 2" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="4">
+          <img src="images/camilo_anchico_04.jpeg" alt="Project 3 — image 1" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="5">
+          <img src="images/camilo_anchico_05.jpeg" alt="Project 3 — image 2" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="6">
+          <img src="images/camilo_anchico_06.jpeg" alt="Project 4 — image 1" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="7">
+          <img src="images/camilo_anchico_07.jpeg" alt="Project 4 — image 2" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="8">
+          <img src="images/camilo_anchico_08.jpeg" alt="Project 5 — image 1" loading="lazy" />
+        </div>
+
+        <div class="g-item" role="listitem" tabindex="0" data-index="9">
+          <img src="images/camilo_anchico_09.jpeg" alt="Project 5 — image 2" loading="lazy" />
+        </div>
+
+      </div><!-- /gallery -->
+    </div>
+  </section>
+
+  <!-- ── Contact ──────────────────────────────────────────────── -->
+  <section class="section-contact" id="contact">
+    <div class="container">
+
+      <div class="s-header">
+        <span class="s-index">02</span>
+        <h2 class="s-title" data-key="contact.title">Get in Touch</h2>
+      </div>
+
+      <div class="contact-layout">
+
+        <div class="contact-aside">
+          <p class="contact-text" data-key="contact.text">
+            Have a project in mind? Let's talk about making something great together.
+          </p>
+          <ul class="contact-links" aria-label="Social links">
+            <li><a href="mailto:hello@hc.design" class="c-social">hello@hc.design</a></li>
+            <li><a href="#" class="c-social">Instagram</a></li>
+            <li><a href="#" class="c-social">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <input  type="text"  id="fname"    name="name"    required placeholder=" " autocomplete="name" />
+              <label  for="fname"  data-key="form.name">Name</label>
+            </div>
+            <div class="form-field">
+              <input  type="email" id="femail"   name="email"   required placeholder=" " autocomplete="email" />
+              <label  for="femail" data-key="form.email">Email</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <textarea id="fmessage" name="message" rows="5" required placeholder=" "></textarea>
+            <label    for="fmessage" data-key="form.message">Message</label>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="submit-btn">
+              <span data-key="form.send">Send Message</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <p class="form-success" id="formSuccess" aria-live="polite" data-key="form.success">
+              Message sent! I'll get back to you soon.
+            </p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <span class="footer-copy">© 2025 HC</span>
+      <span class="footer-made" data-key="footer.made">Designed &amp; built with care</span>
+    </div>
+  </footer>
+
+  <!-- ── Lightbox ─────────────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lbClose" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous image">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="lb-arrow lb-next" id="lbNext" aria-label="Next image">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M7.5 4L13.5 10L7.5 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <figure class="lb-figure">
+      <img class="lb-img" id="lbImg" src="" alt="" />
+    </figure>
+    <div class="lb-counter" aria-live="polite">
+      <span id="lbCurrent">1</span><span class="lb-sep">—</span><span id="lbTotal">10</span>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
