@@ -6,9 +6,9 @@ const ui = {
     'nav.work':       'Work',
     'nav.contact':    'Contact',
     'hero.eyebrow':   'Creative Portfolio',
-    'hero.heading':   'Camilo Anchico<br>Fashion Model',
+    'hero.heading':   'Camilo Anchico<br><span class="hero-heading-role">Fashion Model</span>',
     'hero.sub':       'Artistic. Intentional. Purposeful.',
-    'hero.intro':     'Selected editorial and commercial fashion modeling work. Available for bookings worldwide.',
+    'hero.intro':     'Selected fashion, e-commerce, and commercial modeling work. Available for bookings worldwide.',
     'hero.scroll':    'Scroll',
     'work.title':     'Selected Work',
     'contact.title':  'Get in Touch',
@@ -25,9 +25,9 @@ const ui = {
     'nav.work':       'Trabajos',
     'nav.contact':    'Contacto',
     'hero.eyebrow':   'Portafolio Creativo',
-    'hero.heading':   'Camilo Anchico<br>Modelo de Moda',
+    'hero.heading':   'Camilo Anchico<br><span class="hero-heading-role">Modelo de Moda</span>',
     'hero.sub':       'Artístico. Intencional. Con propósito.',
-    'hero.intro':     'Trabajo seleccionado de modelaje de moda editorial y comercial. Disponible para reservas a nivel mundial.',
+    'hero.intro':     'Trabajo seleccionado de moda, e-commerce y modelaje comercial. Disponible para reservas a nivel mundial.',
     'hero.scroll':    'Scroll',
     'work.title':     'Proyectos Seleccionados',
     'contact.title':  'Hablemos',
@@ -70,10 +70,10 @@ let   lbIndex  = 0;
 
 lbTotEl.textContent = total;
 
-// Collect image src + alt from each gallery item
+// Collect full-res src + alt from each gallery item (data-full points at the 2000px JPEG)
 const srcs = items.map(item => {
   const img = item.querySelector('img');
-  return { src: img.src, alt: img.alt };
+  return { src: item.dataset.full || img.src, alt: img.alt };
 });
 
 function openLightbox(idx) {
