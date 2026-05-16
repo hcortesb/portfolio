@@ -469,6 +469,23 @@ body  {
   transform: none;
 }
 
+.form-error {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: #B85450;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.form-error.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hp-field { display: none; }
+
 /* ── Footer ────────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--border);

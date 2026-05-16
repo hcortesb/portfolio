@@ -18,6 +18,7 @@ const ui = {
     'form.message':   'Message',
     'form.send':      'Send Message',
     'form.success':   'Message sent! I\'ll get back to you soon.',
+    'form.error':     'Something went wrong. Please try again or email me directly.',
     'footer.made':    'Designed &amp; built with care',
   },
   es: {
@@ -36,6 +37,7 @@ const ui = {
     'form.message':   'Mensaje',
     'form.send':      'Enviar Mensaje',
     'form.success':   '¡Mensaje enviado! Te responderé pronto.',
+    'form.error':     'Algo salió mal. Por favor, inténtalo de nuevo o escríbeme directamente.',
     'footer.made':    'Diseñado y construido por HC',
   },
 };
@@ -148,17 +150,32 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ── Contact form ──────────────────────────────────────────────── */
-document.getElementById('contactForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const btn     = e.target.querySelector('.submit-btn');
-  const success = document.getElementById('formSuccess');
-  btn.disabled  = true;
+const FORMSPREE_ENDPOINT = 'https://formspree.io/p/3002536945701093083/f/contactForm';
 
-  /* Swap this timeout for your real backend / Formspree / EmailJS */
-  setTimeout(() => {
-    e.target.reset();
+document.getElementById('contactForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form    = e.target;
+  const btn     = form.querySelector('.submit-btn');
+  const success = document.getElementById('formSuccess');
+  const error   = document.getElementById('formError');
+  btn.disabled  = true;
+  success.classList.remove('visible');
+  error.classList.remove('visible');
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
+    });
+    if (!res.ok) throw new Error('Submission failed');
+    form.reset();
     success.classList.add('visible');
-    btn.disabled = false;
     setTimeout(() => success.classList.remove('visible'), 5000);
-  }, 900);
+  } catch {
+    error.classList.add('visible');
+    setTimeout(() => error.classList.remove('visible'), 5000);
+  } finally {
+    btn.disabled = false;
+  }
 });
