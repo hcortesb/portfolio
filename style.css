@@ -408,6 +408,11 @@ body  {
   margin-bottom: 40px;
 }
 
+.contact-text--strong {
+  font-weight: 600;
+  color: var(--black);
+}
+
 .contact-links {
   list-style: none;
   display: flex;
