@@ -69,7 +69,10 @@
           <a href="#work"    class="nav-link" data-key="nav.work">Work</a>
           <a href="#contact" class="nav-link" data-key="nav.contact">Contact</a>
         </div>
-        <button class="lang-btn" id="langToggle" aria-label="Toggle language">ES</button>
+        <div class="nav-right">
+          <a href="#contact" class="cta-btn cta-btn-sm" data-key="nav.cta">Hire Me</a>
+          <button class="lang-btn" id="langToggle" aria-label="Toggle language">ES</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -82,6 +85,10 @@
         <h1 class="hero-heading" data-key="hero.heading">Camilo Anchico<br><span class="hero-heading-role">Fashion Model</span></h1>
         <p  class="hero-sub"     data-key="hero.sub">Artistic. Intentional. Purposeful.</p>
         <p  class="hero-intro"   data-key="hero.intro">Selected fashion, e-commerce, and commercial modeling work. Available for bookings worldwide.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="cta-btn" data-key="hero.cta.primary">Book a Casting</a>
+          <a href="#work"    class="cta-btn cta-btn-outline" data-key="hero.cta.secondary">View Portfolio</a>
+        </div>
       </div>
       <div class="hero-scroll" aria-hidden="true">
         <span class="scroll-line"></span>
@@ -206,6 +213,17 @@
               <input  type="email" id="femail"   name="email"   required placeholder=" " autocomplete="email" />
               <label  for="femail" data-key="form.email">Email</label>
             </div>
+          </div>
+          <div class="form-field form-field-select">
+            <label for="fprojectType" data-key="form.projectType.label">Project Type</label>
+            <select id="fprojectType" name="projectType" required>
+              <option value="" disabled selected hidden data-key="form.projectType.placeholder">Select an option</option>
+              <option value="ecommerce"  data-key="form.projectType.ecommerce">E-commerce</option>
+              <option value="fashion"    data-key="form.projectType.fashion">Fashion Campaign</option>
+              <option value="commercial" data-key="form.projectType.commercial">Commercial</option>
+              <option value="runway"     data-key="form.projectType.runway">Runway</option>
+              <option value="other"      data-key="form.projectType.other">Other</option>
+            </select>
           </div>
           <div class="form-field">
             <textarea id="fmessage" name="message" rows="5" required placeholder=" "></textarea>
