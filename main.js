@@ -110,6 +110,13 @@ document.getElementById('contactForm').addEventListener('submit', async e => {
       body: new FormData(form),
     });
     if (!res.ok) throw new Error('Submission failed');
+    // GA4 / GTM — fires the generate_lead Custom Event trigger
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'generate_lead',
+      form_id: 'contactForm',
+      project_type: (form.elements.projectType && form.elements.projectType.value) || 'unspecified'
+    });
     form.reset();
     success.classList.add('visible');
     setTimeout(() => success.classList.remove('visible'), 5000);
